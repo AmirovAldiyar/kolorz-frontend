@@ -25,7 +25,7 @@ Kolorz technical stack:
 
 - HTML - HTML enhanced for web apps!
 - CSS - awesomely style an HTML 
-- Vue.js - framework for building user interfaces 
+- JS - user interaction 
 - Nuxt.js - Free and open source web application framework based on Vue.js, Node.js, Webpack and Babel.js.
 
 And of course Kolorz itself is open source with a [public repository][kolorz] on GitLab [^3].
@@ -59,7 +59,7 @@ And of course Kolorz itself is open source with a [public repository][kolorz] on
 ##### Stakeholder <a name="stakeholder"></a>
 Table describes stakeholder's roles and responsibilities.
 | Stakeholder’s Name |               Roles               |                          Responsibilities                         |
-|:------------------:|:---------------------------------:|:-----------------------------------------------------------------:|
+|--------------------|-----------------------------------|-------------------------------------------------------------------|
 | Users              | users                             | Use web application                                               |
 | Designer           | Designer                          | Create user-friendly design                                       |
 | Developer          | Project manager, Frontend, tester | Manage the project; Implement features; Test implemented features |
@@ -70,7 +70,7 @@ There are demo list of hierarchy of user stories requirements, to see more pleas
 |--------------------------------------|---------------------|------------------|------------------------------------------------------|----------|
 |                                      |                     | User story title |                User story description                | Priority |
 | Input data to generate color palette | Color choice        | Color wheel      | Color wheel                                          | Must     |
-|                                      |                     | Color picker [^4]     | Color picker in color wheel                          | Must     |
+|                                      |                     | Color picker [^4]| Color picker in color wheel                          | Must     |
 |                                      |                     | Saturation bar   | Saturation bar                                       | Must     |
                
 There are demo list of our user stories requirements, to see more please check [full project docuntarion].
@@ -84,7 +84,7 @@ There are demo list of our user stories requirements, to see more please check [
 
 There are demo list of our non-functional requirements, to see more please check [full project docuntarion].
 | ID # |  User Story Title                  | Priority |  Any Other Label |  Meeting requirements (measurements)                                                                                                 |  Testing                                                             |
-|:----:|------------------------------------|:--------:|------------------|--------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+|------|------------------------------------|----------|------------------|--------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
 | 1    | Web application has to be adaptive | Must     | Portability      | Make adaptive web application for various resolution (1440x…, 768X…, 430x…, 360x…) , so it will be compatible with different devices | The Web application works as expected in various resolution screens. |
 | 1    | Web application has to be adaptive | Must     | Portability      | Make adaptive web application for various resolution (1440x…, 768X…, 430x…, 360x…) , so it will be compatible with different devices | The Web application works as expected in various resolution screens. |
 
