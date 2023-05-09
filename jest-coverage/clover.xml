@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1683630134507" clover="3.2.0">
+  <project timestamp="1683630134508" name="All files">
+    <metrics statements="79" coveredstatements="65" conditionals="8" coveredconditionals="1" methods="16" coveredmethods="16" elements="103" coveredelements="82" complexity="0" loc="79" ncloc="79" packages="1" files="1" classes="1"/>
+    <file name="pickersCoordinates.js" path="/home/easel/labs/kolorz-frontend-1/src/components/utils/pickersCoordinates.js">
+      <metrics statements="79" coveredstatements="65" conditionals="8" coveredconditionals="1" methods="16" coveredmethods="16"/>
+      <line num="3" count="37" type="stmt"/>
+      <line num="4" count="37" type="stmt"/>
+      <line num="5" count="37" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="9" count="18" type="stmt"/>
+      <line num="10" count="18" type="stmt"/>
+      <line num="11" count="18" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="31" count="2" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
+      <line num="37" count="2" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+      <line num="44" count="2" type="stmt"/>
+      <line num="45" count="1" type="stmt"/>
+      <line num="50" count="2" type="stmt"/>
+      <line num="51" count="1" type="stmt"/>
+      <line num="57" count="2" type="stmt"/>
+      <line num="58" count="1" type="stmt"/>
+      <line num="59" count="1" type="stmt"/>
+      <line num="60" count="1" type="stmt"/>
+      <line num="61" count="1" type="stmt"/>
+      <line num="62" count="1" type="stmt"/>
+      <line num="63" count="1" type="stmt"/>
+      <line num="64" count="1" type="stmt"/>
+      <line num="68" count="2" type="stmt"/>
+      <line num="69" count="5" type="stmt"/>
+      <line num="70" count="5" type="stmt"/>
+      <line num="71" count="5" type="stmt"/>
+      <line num="72" count="5" type="stmt"/>
+      <line num="75" count="2" type="stmt"/>
+      <line num="76" count="3" type="stmt"/>
+      <line num="77" count="3" type="stmt"/>
+      <line num="78" count="3" type="stmt"/>
+      <line num="79" count="3" type="stmt"/>
+      <line num="80" count="3" type="stmt"/>
+      <line num="83" count="2" type="stmt"/>
+      <line num="84" count="2" type="stmt"/>
+      <line num="85" count="2" type="stmt"/>
+      <line num="86" count="2" type="stmt"/>
+      <line num="87" count="2" type="stmt"/>
+      <line num="88" count="2" type="stmt"/>
+      <line num="89" count="2" type="stmt"/>
+      <line num="97" count="2" type="stmt"/>
+      <line num="100" count="2" type="stmt"/>
+      <line num="102" count="1" type="stmt"/>
+      <line num="103" count="1" type="stmt"/>
+      <line num="104" count="1" type="stmt"/>
+      <line num="105" count="1" type="stmt"/>
+      <line num="107" count="1" type="cond" truecount="1" falsecount="7"/>
+      <line num="109" count="1" type="stmt"/>
+      <line num="110" count="1" type="stmt"/>
+      <line num="113" count="0" type="stmt"/>
+      <line num="114" count="0" type="stmt"/>
+      <line num="117" count="0" type="stmt"/>
+      <line num="118" count="0" type="stmt"/>
+      <line num="121" count="0" type="stmt"/>
+      <line num="122" count="0" type="stmt"/>
+      <line num="125" count="0" type="stmt"/>
+      <line num="126" count="0" type="stmt"/>
+      <line num="129" count="0" type="stmt"/>
+      <line num="130" count="0" type="stmt"/>
+      <line num="133" count="0" type="stmt"/>
+      <line num="134" count="0" type="stmt"/>
+      <line num="137" count="0" type="stmt"/>
+      <line num="138" count="0" type="stmt"/>
+      <line num="142" count="1" type="stmt"/>
+      <line num="143" count="1" type="stmt"/>
+      <line num="147" count="1" type="stmt"/>
+      <line num="148" count="1" type="stmt"/>
+      <line num="149" count="1" type="stmt"/>
+      <line num="150" count="1" type="stmt"/>
+      <line num="151" count="1" type="stmt"/>
+      <line num="155" count="1" type="stmt"/>
+      <line num="158" count="2" type="stmt"/>
+    </file>
+  </project>
+</coverage>

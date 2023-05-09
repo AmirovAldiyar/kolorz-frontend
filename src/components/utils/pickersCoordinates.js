@@ -143,24 +143,6 @@ const colorListForSelectedMode = (mode, x, y, sbv, canvas, canvas_div) => {
   return p;
 }
 
-const clickHandler = () => {
-  if (isDown === 1) {
-      setIsDown(0);
-  } else {
-      setIsDown(1);
-  }
-}
-
-const pickerFromList = (p, isDown, setIsDown, id) => {
-  let Object_rows = [];
-
-  let x = (p.length);
-  for (let i = 0; i < x; i++) {
-      Object_rows.push(<ColorPicker id={id + p[i].id} isDown={isDown} setIsDown={setIsDown} clickHandler={clickHandler}></ColorPicker>);
-  }
-  return Object_rows;
-}
-
 function hexToRgb(hex, saturation) {
   var bigint = parseInt(hex, 16);
   var r = (bigint >> 16) & 255;
@@ -175,7 +157,9 @@ function hexWithSaturation(hex, saturation) {
 
 module.exports = {
   cartesianToPolar,
+  polarToCartesian,
   complementary,
+  rgbToHexB,
   square,
   triadic,
   isosceles,
@@ -186,6 +170,5 @@ module.exports = {
   takeColorFromWheel,
   colorListFromArray,
   colorListForSelectedMode,
-  pickerFromList,
   hexWithSaturation,
 }

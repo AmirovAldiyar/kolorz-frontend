@@ -82,7 +82,6 @@ const UnstyledDonate = ({classes}) => {
               }
             }
            }).done(function(response) {
-             console.log(response); // if you're into that sorta thing
              alert('Message send');
            });
     }

@@ -1,0 +1,3 @@
+{"total": {"lines":{"total":79,"covered":46,"skipped":0,"pct":58.22},"statements":{"total":80,"covered":47,"skipped":0,"pct":58.75},"functions":{"total":16,"covered":7,"skipped":0,"pct":43.75},"branches":{"total":8,"covered":1,"skipped":0,"pct":12.5},"branchesTrue":{"total":0,"covered":0,"skipped":0,"pct":"Unknown"}}
+,"/home/easel/labs/kolorz-frontend-1/src/components/utils/pickersCoordinates.js": {"lines":{"total":79,"covered":46,"skipped":0,"pct":58.22},"functions":{"total":16,"covered":7,"skipped":0,"pct":43.75},"statements":{"total":80,"covered":47,"skipped":0,"pct":58.75},"branches":{"total":8,"covered":1,"skipped":0,"pct":12.5}}
+}

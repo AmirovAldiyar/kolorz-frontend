@@ -98,11 +98,6 @@ const UnstyledModeCard = ({classes, num, forModeChange, setMode, updateColorPick
         setMode(objects[num].name);
         forModeChange.mode = objects[num].name;
         updateColorPickers(forModeChange);
-
-
-        let ColorPickerHistory = [];
-        ColorPickerHistory = forModeChange.historyColors;
-        ColorPickerHistory.push(forModeChange.colorPickerParameters[0]);
     };
 
     return (
