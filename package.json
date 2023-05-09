@@ -4,11 +4,23 @@
     "description": "This README would normally document whatever steps are necessary to get your application up and running.",
     "main": "./src/index.tsx",
     "scripts": {
-        "test": "jest",
         "start": "ijl-cli --server --port=8099 --with-open-browser",
         "build": "npm run clean && ijl-cli --build --dev",
         "build:prod": "npm run clean && ijl-cli --build",
-        "clean": "rimraf dist"
+        "clean": "rimraf dist",
+        "cy:open": "cypress open",
+        "test:jest": "jest",
+        "test:cy": "cypress run",
+        "test": "npm run test:jest && npm run test:cy",
+        "pretest": "rm -rf .nyc_output || true",
+        "posttest": "npm run report:combined",
+        "mkdir:reports": "mkdir reports || true",
+        "precopy:reports": "npm run mkdir:reports",
+        "copy:reports": "cp cypress-coverage/coverage-final.json reports/from-cypress.json && cp jest-coverage/coverage-final.json reports/from-jest.json",
+        "precombine:reports": "npm run copy:reports && mkdir .nyc_output || true",
+        "combine:reports": "npx nyc merge reports && mv coverage.json .nyc_output/out.json",
+        "prereport:combined": "npm run combine:reports",
+        "report:combined": "npx nyc report --reporter lcov --reporter text --report-dir coverage"
     },
     "repository": {
         "type": "git",
@@ -20,15 +32,29 @@
     "bugs": {
         "url": "https://bitbucket.org/ease-ln/kolorz.art/issues"
     },
+    "nyc": {
+        "report-dir": "cypress-coverage"
+    },
     "homepage": "https://bitbucket.org/ease-ln/kolorz.art#readme",
     "devDependencies": {
+        "cypress-cucumber-preprocessor": "^4.3.0",
+        "@cypress/code-coverage": "3.9.12",
         "@ijl/cli": "^4.1.0",
+        "babel-plugin-istanbul": "6.1.1",
+        "check-code-coverage": "1.10.4",
+        "cypress": "4.12.1",
         "@types/jest": "^27.5.1",
         "@types/jquery": "^3.5.14",
         "@types/react": "^17.0.43",
         "jest": "^28.0.2",
+        "typescript": "^4.4.4",
+        "jest-environment-jsdom": "^29.5.0",
+        "jest-jasmine2": "^29.5.0",
         "json-loader": "^0.5.7",
         "ts-jest": "^28.0.2"
+    },
+    "cypress-cucumber-preprocessor": {
+        "nonGlobalStepDefinitions": true
     },
     "dependencies": {
         "@reduxjs/toolkit": "^1.8.1",

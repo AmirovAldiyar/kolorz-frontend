@@ -24,25 +24,37 @@ const styles = {
 }
 
 
-const UnstyledHistory = ({classes, ColorWheelParameters, updateColorPickers}) => {
+const UnstyledHistory = ({classes, forModeChange, setMode, updateColorPickers, setSaturation}) => {
 
     const clickHandler = function(n) {
-        const baseColorPicker = (document.getElementById(ColorWheelParameters.baseColorPicker) as HTMLInputElement)
-        baseColorPicker.style.left = ColorWheelParameters.historyColors[n].x;
-        baseColorPicker.style.top = ColorWheelParameters.historyColors[n].y;
-        baseColorPicker.style.background = hexWithSaturation(ColorWheelParameters.historyColors[n].color, ColorWheelParameters.historyColors[n].sbv);
-        ColorWheelParameters.setMode(ColorWheelParameters.historyColors[n].mode);
-        ColorWheelParameters.setColorPickerParameters([ColorWheelParameters.historyColors[n]]);
-        ColorWheelParameters.setSaturation(ColorWheelParameters.historyColors[n].sbv);
-        const SaturationBar = (document.getElementById(ColorWheelParameters.sb) as HTMLInputElement);
-        SaturationBar.value = ColorWheelParameters.historyColors[n].sbv;
-        ColorWheelParameters.saturation = ColorWheelParameters.historyColors[n].sbv;
-        updateColorPickers(ColorWheelParameters);
+
+        n = n - 1;
+        forModeChange.setColorPickerParameters([{color: forModeChange.historyColors[n].color,
+            x: forModeChange.historyColors[n].x, 
+            y: forModeChange.historyColors[n].y,
+            mode: forModeChange.historyColors[n].mode,
+            sbv: forModeChange.historyColors[n].sbv}])
+        console.log(forModeChange.historyColors[n]);
+        (document.getElementById(forModeChange.baseColorPicker) as HTMLInputElement).style.left = forModeChange.historyColors[n].x;
+        (document.getElementById(forModeChange.baseColorPicker) as HTMLInputElement).style.top  = forModeChange.historyColors[n].y;
+        (document.getElementById(forModeChange.baseColorPicker) as HTMLInputElement).style.background = hexWithSaturation(forModeChange.historyColors[n].color, forModeChange.historyColors[n].sbv/255);
+        
+        forModeChange.saturation = forModeChange.historyColors[n].sbv;
+
+        forModeChange.setSaturation(forModeChange.historyColors[n].sbv);
+
+        const SaturationBar = (document.getElementById(forModeChange.sb) as HTMLInputElement);
+        SaturationBar.value = forModeChange.historyColors[n].sbv;
+        setMode(forModeChange.historyColors[n].mode)
+        setSaturation(forModeChange.historyColors[n].sbv)
+
+        forModeChange.mode = forModeChange.historyColors[n].mode;
+        updateColorPickers(forModeChange);
     };
 
     const histories = []
     for (let i = 9; i > -1; i--) {
-        histories.push(<div id={ColorWheelParameters.id+'history'+i.toString()} key={ColorWheelParameters.id+'history'+i.toString()}  className={classes.Color} onClick={() => clickHandler(i)} style={{background: '#ffffff'}}></div>)
+        histories.push(<div id={forModeChange.id+'history'+i.toString()} key={forModeChange.id+'history'+i.toString()}  className={classes.Color} onClick={() => clickHandler(i)} style={{background: '#ffffff'}}></div>)
     }   
 
     return (

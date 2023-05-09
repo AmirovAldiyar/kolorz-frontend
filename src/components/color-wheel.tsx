@@ -38,7 +38,7 @@ const UnstyledColorWheel = ({ classes, colorWheel, updateColorPickers, addHistor
             ColorPickerElements.push(<ColorPicker id={colorWheel.id+'ColorPicker'+i.toString()} key={colorWheel.id+'ColorPicker'+i.toString()} clickHandler={() => {console.log('minus warming')}} style={{visibility: 'hidden'}}></ColorPicker>);} 
         colorWheel.setColorPickerElements( ColorPickerElements );
         colorWheel.setColorPickerParameters( ColorPickerParameters );
-        for (let i = 0; i < 11; i++) {
+        for (let i = 0; i < 9; i++) {
             ColorPickerHistory.push({color: '#FFFFFF', x: (colorWheel.offsetLeft+340-20).toString() + 'px', y: (colorWheel.offsetTop+330-20).toString() + 'px', mode: 'complementary', sbv: 255});
         }
         addHistoryColor(ColorPickerHistory);
@@ -65,19 +65,22 @@ const UnstyledColorWheel = ({ classes, colorWheel, updateColorPickers, addHistor
         }
     }
 
+    useEffect(() => {
+        if (isDown === 0 && !!colorWheel.historyColors.length) {
+
+            colorWheel.historyColors.push(colorWheel.colorPickerParameters[0]);
+            addHistoryColor(colorWheel.historyColors.slice(-9));
+            for (let i=0; i < 10; i++){
+                const hs = (document.getElementById( colorWheel.id+'history'+(9-i).toString()) as HTMLDivElement);
+                hs.style.background = hexWithSaturation( colorWheel.historyColors[9-i].color,  colorWheel.historyColors[9-i].sbv/255);
+            }
+        }
+    }, [isDown])
+
     const clickHandler = (isDownState, setIsDownState) => {
         updateColorPickers(colorWheel);
         if (isDownState === 1) {
             setIsDownState(0);
-            let ColorPickerHistory = [];
-            ColorPickerHistory = colorWheel.historyColors;
-            ColorPickerHistory.push(colorWheel.colorPickerParameters[0]);
-            addHistoryColor(ColorPickerHistory.slice(ColorPickerHistory.length-11, ColorPickerHistory.length));
-    
-            for (let i=0; i < 10; i++){
-                const hs = (document.getElementById(colorWheel.id+'history'+(9-i).toString()) as HTMLDivElement);
-                hs.style.background = hexWithSaturation(colorWheel.historyColors[10-i].color, colorWheel.historyColors[10-i].sbv/255);
-            }
         } else {
             setIsDownState(1);
         }

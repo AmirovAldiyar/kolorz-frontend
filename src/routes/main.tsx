@@ -121,6 +121,12 @@ const styles = {
         MinHeight: 10,
         display: 'flex',
         justifyContent: 'center',
+    },
+    ExportButton: {
+        display: 'flex',
+        justifyContent: 'center',
+        marginRight: 70, 
+        marginTop: 50,
     }
 }
 
@@ -160,16 +166,16 @@ const UnstyledApp = ({classes, Ids}) => {
     }
 
     function updateColorPickers(ColorWheelParameters) {
-        let cpl = (document.getElementById(ColorWheelParameters.baseColorPicker) as HTMLInputElement);
+        let cpl0 = (document.getElementById(ColorWheelParameters.baseColorPicker) as HTMLInputElement);
         let canvas = (document.getElementById(ColorWheelParameters.id) as HTMLCanvasElement);
         let canvas_div = (document.getElementById(ColorWheelParameters.colorWheelContainer) as HTMLDivElement);
-        let p = colorListForSelectedMode(ColorWheelParameters.mode, cpl.style.left.slice(0,-2), cpl.style.top.slice(0,-2), ColorWheelParameters.saturation/255, canvas, canvas_div);
+        let p = colorListForSelectedMode(ColorWheelParameters.mode, cpl0.style.left.slice(0,-2), cpl0.style.top.slice(0,-2), ColorWheelParameters.saturation/255, canvas, canvas_div);
         for (let i of ColorWheelParameters.colorPickerElements){
             (document.getElementById(i['props']['id']) as HTMLInputElement).style.visibility = 'hidden';
          }
         const length = p.length;
         for (let i = 0; i < length; i++){
-            cpl = (document.getElementById(ColorWheelParameters.colorPickerElements[i]['props']['id']) as HTMLInputElement);
+            let cpl = (document.getElementById(ColorWheelParameters.colorPickerElements[i]['props']['id']) as HTMLInputElement);
             cpl.style.visibility = 'visible';
             cpl.style.left = (p[i].x).toString() + 'px';
             cpl.style.top = (p[i].y).toString() + 'px';
@@ -231,7 +237,9 @@ const UnstyledApp = ({classes, Ids}) => {
                                 updateColorPickers = {updateColorPickers}
                                 ></ModeSelect>
                     <div className={classes.modeSelectTitle}>HISTORY</div>
-                    <ColorHistory ColorWheelParameters={ColorWheelParameters}
+                    <ColorHistory forModeChange={ColorWheelParameters}
+                                  setMode={setMode}
+                                  setSaturation={setSaturation}
                                   updateColorPickers={updateColorPickers}></ColorHistory>
                     <div className={classes.ExportButton}>
                         <Button id='ExportButton' type="button" value='Export' color='black' textColor='white' ButtonClick={ () => {ExportButtonClickHandler(
