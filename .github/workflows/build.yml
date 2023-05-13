@@ -13,6 +13,11 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - uses: actions/checkout@v3
+      - name: Install modules
+        run: yarn
+      - name: Run tests
+        run: yarn test:jest --coverage
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
@@ -31,11 +36,3 @@ jobs:
           install-command: yarn install
           build: yarn build
           start: yarn start
-  jest-run:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install modules
-        run: yarn
-      - name: Run tests
-        run: yarn test:jest
