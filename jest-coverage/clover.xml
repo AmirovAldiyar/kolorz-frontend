@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683630134507" clover="3.2.0">
-  <project timestamp="1683630134508" name="All files">
+<coverage generated="1683999648817" clover="3.2.0">
+  <project timestamp="1683999648817" name="All files">
     <metrics statements="79" coveredstatements="65" conditionals="8" coveredconditionals="1" methods="16" coveredmethods="16" elements="103" coveredelements="82" complexity="0" loc="79" ncloc="79" packages="1" files="1" classes="1"/>
-    <file name="pickersCoordinates.js" path="/home/easel/labs/kolorz-frontend-1/src/components/utils/pickersCoordinates.js">
+    <file name="pickersCoordinates.js" path="/mnt/c/Users/amiro/projects/kolorz.art/src/components/utils/pickersCoordinates.js">
       <metrics statements="79" coveredstatements="65" conditionals="8" coveredconditionals="1" methods="16" coveredmethods="16"/>
       <line num="3" count="37" type="stmt"/>
       <line num="4" count="37" type="stmt"/>
