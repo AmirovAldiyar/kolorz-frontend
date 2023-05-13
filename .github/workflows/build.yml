@@ -28,8 +28,8 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          build: npm run build
-          start: npm start
+          build: yarn build
+          start: yarn start
   jest-run:
     runs-on: ubuntu-latest
     steps:
